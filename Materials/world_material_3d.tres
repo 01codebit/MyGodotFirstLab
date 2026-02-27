@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://clvkakmecg3sv"]
+
+[ext_resource type="Texture2D" uid="uid://du7uf7ext38p1" path="res://Textures/world/texture_maps_of_the_world.jpg" id="1_rvlpe"]
+
+[resource]
+albedo_texture = ExtResource("1_rvlpe")

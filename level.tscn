@@ -1,12 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bffs0yqr2jdrx"]
+[gd_scene load_steps=10 format=3 uid="uid://bffs0yqr2jdrx"]
 
 [ext_resource type="Script" uid="uid://dcfj25rphy76m" path="res://Level.cs" id="1_oi3di"]
 [ext_resource type="Script" uid="uid://cl0xcq7lkmdq7" path="res://Camera3d.cs" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://djm7igip2j47y" path="res://Box3.cs" id="2_vonw3"]
-[ext_resource type="Texture2D" uid="uid://c1dv1vprhjo4y" path="res://Textures/aerial_rocks_04_4k/aerial_rocks_04_diff_4k.png" id="4_1ainy"]
-[ext_resource type="Texture2D" uid="uid://dx0pue0jj184h" path="res://Textures/aerial_rocks_04_4k/aerial_rocks_04_disp_4k.png" id="5_km5ld"]
-[ext_resource type="Texture2D" uid="uid://bc1dl435axhgp" path="res://Textures/aerial_rocks_04_4k/aerial_rocks_04_nor_gl_4k.png" id="5_n6hdu"]
-[ext_resource type="Texture2D" uid="uid://dwbne54u5gkqq" path="res://Textures/aerial_rocks_04_4k/aerial_rocks_04_rough_4k.png" id="6_km5ld"]
+[ext_resource type="Material" uid="uid://clvkakmecg3sv" path="res://Materials/world_material_3d.tres" id="4_0b4ue"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5xgho"]
 
@@ -17,20 +14,11 @@ albedo_color = Color(0.07058824, 0.6627451, 1, 1)
 material = SubResource("StandardMaterial3D_5xgho")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u52ul"]
-size = Vector3(30, 1, 30)
+size = Vector3(300, 0.2, 200)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i2t4f"]
-albedo_texture = ExtResource("4_1ainy")
-roughness_texture = ExtResource("6_km5ld")
-normal_enabled = true
-normal_texture = ExtResource("5_n6hdu")
-heightmap_enabled = true
-heightmap_texture = ExtResource("5_km5ld")
-uv1_scale = Vector3(10, 10, 10)
-
-[sub_resource type="BoxMesh" id="BoxMesh_vonw3"]
-material = SubResource("StandardMaterial3D_i2t4f")
-size = Vector3(30, 1, 30)
+[sub_resource type="PlaneMesh" id="PlaneMesh_oi3di"]
+material = ExtResource("4_0b4ue")
+size = Vector2(300, 200)
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_oi3di")
@@ -52,7 +40,7 @@ shape = SubResource("BoxShape3D_5xgho")
 mesh = SubResource("BoxMesh_u52ul")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.84308183, 0.5377853, 0, -0.5377853, 0.84308183, 0, 2.9639072, 4.032878)
+transform = Transform3D(1, 0, 0, 0, 0.30519664, 0.9522893, 0, -0.9522893, 0.30519664, 0, 10.283983, 9.25597)
 script = ExtResource("1_u52ul")
 
 [node name="Box2" type="RigidBody3D" parent="."]
@@ -75,10 +63,12 @@ shape = SubResource("BoxShape3D_5xgho")
 mesh = SubResource("BoxMesh_u52ul")
 
 [node name="Ground" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.47813, 0, 37.034386)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 shape = SubResource("BoxShape3D_u52ul")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-mesh = SubResource("BoxMesh_vonw3")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.947334)
+mesh = SubResource("PlaneMesh_oi3di")

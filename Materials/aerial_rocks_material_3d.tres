@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dwlwny4syq5j2"]
+
+[ext_resource type="Texture2D" uid="uid://c1dv1vprhjo4y" path="res://Textures/aerial_rocks_04_4k/aerial_rocks_04_diff_4k.png" id="1_hkpk7"]
+[ext_resource type="Texture2D" uid="uid://dx0pue0jj184h" path="res://Textures/aerial_rocks_04_4k/aerial_rocks_04_disp_4k.png" id="2_8beeb"]
+[ext_resource type="Texture2D" uid="uid://bc1dl435axhgp" path="res://Textures/aerial_rocks_04_4k/aerial_rocks_04_nor_gl_4k.png" id="3_nsbyp"]
+[ext_resource type="Texture2D" uid="uid://dwbne54u5gkqq" path="res://Textures/aerial_rocks_04_4k/aerial_rocks_04_rough_4k.png" id="4_hffmp"]
+
+[resource]
+albedo_texture = ExtResource("1_hkpk7")
+roughness_texture = ExtResource("4_hffmp")
+normal_enabled = true
+normal_texture = ExtResource("3_nsbyp")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_8beeb")
