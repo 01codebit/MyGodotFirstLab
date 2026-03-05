@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b85xwvif2u3e7"]
+
+[ext_resource type="Material" uid="uid://1nvrnylcajfg" path="res://godot-prototype-mini-bundle-52d475572ca91d25f4d930691ece6ba5c2639483/addons/prototype_mini_bundle/M_prototype_red.tres" id="1_wvjbj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5xgho"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_km5ld"]
+material = ExtResource("1_wvjbj")
+
+[node name="Box2" type="RigidBody3D" unique_id=628098428]
+transform = Transform3D(0.1819393, 0.968558, 0.1696869, -0.5790362, 0.2450048, -0.7776185, -0.79474235, 0.043224618, 0.60540605, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1243022452]
+shape = SubResource("BoxShape3D_5xgho")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1261464960]
+mesh = SubResource("BoxMesh_km5ld")

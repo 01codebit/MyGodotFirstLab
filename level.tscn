@@ -2,22 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dcfj25rphy76m" path="res://Level.cs" id="1_oi3di"]
 [ext_resource type="Script" uid="uid://cl0xcq7lkmdq7" path="res://Camera3d.cs" id="1_u52ul"]
-[ext_resource type="Script" uid="uid://djm7igip2j47y" path="res://Box3.cs" id="2_vonw3"]
-[ext_resource type="Material" uid="uid://7to3kb1tisdd" path="res://godot-prototype-mini-bundle-52d475572ca91d25f4d930691ece6ba5c2639483/addons/prototype_mini_bundle/M_prototype_orange.tres" id="3_1ainy"]
-[ext_resource type="Material" uid="uid://brj2jayoo0l0d" path="res://godot-prototype-mini-bundle-52d475572ca91d25f4d930691ece6ba5c2639483/addons/prototype_mini_bundle/M_prototype_blue.tres" id="3_f2txt"]
-[ext_resource type="Material" uid="uid://1nvrnylcajfg" path="res://godot-prototype-mini-bundle-52d475572ca91d25f4d930691ece6ba5c2639483/addons/prototype_mini_bundle/M_prototype_red.tres" id="4_n6hdu"]
+[ext_resource type="PackedScene" uid="uid://d6rswujup5af" path="res://Prefabs/box_1.tscn" id="3_1ainy"]
+[ext_resource type="PackedScene" uid="uid://b85xwvif2u3e7" path="res://Prefabs/box_2.tscn" id="4_n6hdu"]
+[ext_resource type="PackedScene" uid="uid://2drq8av783rh" path="res://Prefabs/box_3.tscn" id="5_km5ld"]
 [ext_resource type="Material" uid="uid://dgjiw8udooecr" path="res://godot-prototype-mini-bundle-52d475572ca91d25f4d930691ece6ba5c2639483/addons/prototype_mini_bundle/M_prototype_dark.tres" id="7_n6hdu"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5xgho"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_1ainy"]
-material = ExtResource("3_1ainy")
-
-[sub_resource type="BoxMesh" id="BoxMesh_km5ld"]
-material = ExtResource("4_n6hdu")
-
-[sub_resource type="BoxMesh" id="BoxMesh_u52ul"]
-material = ExtResource("3_f2txt")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u52ul"]
 size = Vector3(100.003296, 0.2, 99.99548)
@@ -40,33 +28,14 @@ use_threads = true
 transform = Transform3D(1, 0, 0, 0, 0.82814837, 0.56050897, 0, -0.56050897, 0.82814837, 0, 7.6086655, 9.25597)
 script = ExtResource("1_u52ul")
 
-[node name="Box1" type="RigidBody3D" parent="." unique_id=1085275502]
-transform = Transform3D(0.8866479, 0.41147953, -0.21104525, -0.4624452, 0.7889314, -0.40463793, 0, 0.45636824, 0.88979113, 0, 4, 0)
+[node name="Box1" parent="." unique_id=1915054495 instance=ExtResource("3_1ainy")]
+transform = Transform3D(0.8866479, 0.41147956, -0.21104531, -0.46244517, 0.7889313, -0.40463793, 2.9802322e-08, 0.45636818, 0.88979113, 0, 4, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Box1" unique_id=106136548]
-shape = SubResource("BoxShape3D_5xgho")
+[node name="Box2" parent="." unique_id=628098428 instance=ExtResource("4_n6hdu")]
+transform = Transform3D(0.18193936, 0.968558, 0.16968705, -0.57903606, 0.24500461, -0.77761847, -0.7947424, 0.043224458, 0.6054061, 0, 9.345, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Box1" unique_id=1568019650]
-mesh = SubResource("BoxMesh_1ainy")
-
-[node name="Box2" type="RigidBody3D" parent="." unique_id=11656708]
-transform = Transform3D(0.1819393, 0.968558, 0.1696869, -0.5790362, 0.2450048, -0.7776185, -0.79474235, 0.043224618, 0.60540605, 0, 9.345, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Box2" unique_id=1441006205]
-shape = SubResource("BoxShape3D_5xgho")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Box2" unique_id=1918388303]
-mesh = SubResource("BoxMesh_km5ld")
-
-[node name="Box3" type="RigidBody3D" parent="." unique_id=266928940]
-transform = Transform3D(-0.66258556, 0.4208548, -0.61956644, 0.37079027, -0.534415, -0.7595501, -0.6507653, -0.73299533, 0.19804685, 0, 12.502767, 0)
-script = ExtResource("2_vonw3")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Box3" unique_id=817289411]
-shape = SubResource("BoxShape3D_5xgho")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Box3" unique_id=1958193464]
-mesh = SubResource("BoxMesh_u52ul")
+[node name="Box3" parent="." unique_id=1150371233 instance=ExtResource("5_km5ld")]
+transform = Transform3D(-0.66258556, 0.4208548, -0.61956644, 0.37079027, -0.534415, -0.7595501, -0.6507653, -0.73299533, 0.19804685, 0, 13.421535, 0)
 
 [node name="Ground" type="StaticBody3D" parent="." unique_id=1268580575]
 
