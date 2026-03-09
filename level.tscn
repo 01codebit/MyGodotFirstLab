@@ -5,7 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://d6rswujup5af" path="res://Prefabs/box_1.tscn" id="3_1ainy"]
 [ext_resource type="PackedScene" uid="uid://b85xwvif2u3e7" path="res://Prefabs/box_2.tscn" id="4_n6hdu"]
 [ext_resource type="PackedScene" uid="uid://2drq8av783rh" path="res://Prefabs/box_3.tscn" id="5_km5ld"]
+[ext_resource type="Script" uid="uid://qpkuljubrb5y" path="res://Ground.cs" id="6_n6hdu"]
 [ext_resource type="Material" uid="uid://dgjiw8udooecr" path="res://godot-prototype-mini-bundle-52d475572ca91d25f4d930691ece6ba5c2639483/addons/prototype_mini_bundle/M_prototype_dark.tres" id="7_n6hdu"]
+[ext_resource type="LabelSettings" uid="uid://jeinj01vj67t" path="res://Settings/label_settings.tres" id="8_i2t4f"]
+[ext_resource type="Script" uid="uid://csf3psssx0q40" path="res://FPSLabel.cs" id="8_km5ld"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u52ul"]
 size = Vector3(100.003296, 0.2, 99.99548)
@@ -38,6 +41,7 @@ transform = Transform3D(0.18193936, 0.968558, 0.16968705, -0.57903606, 0.2450046
 transform = Transform3D(-0.66258556, 0.4208548, -0.61956644, 0.37079027, -0.534415, -0.7595501, -0.6507653, -0.73299533, 0.19804685, 0, 13.421535, 0)
 
 [node name="Ground" type="StaticBody3D" parent="." unique_id=1268580575]
+script = ExtResource("6_n6hdu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=954216821]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
@@ -45,3 +49,31 @@ shape = SubResource("BoxShape3D_u52ul")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1210654069]
 mesh = SubResource("PlaneMesh_oi3di")
+
+[node name="UICanvasLayer" type="CanvasLayer" parent="." unique_id=390670131]
+
+[node name="FPSLabel" type="Label" parent="UICanvasLayer" unique_id=1385394592]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 260.0
+offset_bottom = 85.0
+text = "FPS: "
+label_settings = ExtResource("8_i2t4f")
+script = ExtResource("8_km5ld")
+
+[node name="Label" type="Label" parent="UICanvasLayer" unique_id=1540676412]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -352.0
+offset_top = -148.0
+offset_right = -52.0
+offset_bottom = -83.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "XXX"
+label_settings = ExtResource("8_i2t4f")
+horizontal_alignment = 2
+vertical_alignment = 2
