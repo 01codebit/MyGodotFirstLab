@@ -10,6 +10,7 @@
 [ext_resource type="LabelSettings" uid="uid://jeinj01vj67t" path="res://Settings/label_settings.tres" id="8_i2t4f"]
 [ext_resource type="Script" uid="uid://csf3psssx0q40" path="res://FPSLabel.cs" id="8_km5ld"]
 [ext_resource type="Shader" uid="uid://c3sy0you32a0g" path="res://Shaders/Ether.gdshader" id="10_8cye3"]
+[ext_resource type="Script" uid="uid://cm02cd5t3njw5" path="res://TestNode.cs" id="11_2orkt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u52ul"]
 size = Vector3(100.003296, 0.2, 99.99548)
@@ -90,3 +91,9 @@ vertical_alignment = 2
 [node name="EtherealPlane" type="MeshInstance3D" parent="." unique_id=1555133806]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 4, -10)
 mesh = SubResource("PlaneMesh_i2t4f")
+
+[node name="NodeOfScripts" type="Node" parent="EtherealPlane" unique_id=1792776090]
+
+[node name="Node" type="Node" parent="EtherealPlane/NodeOfScripts" unique_id=1739139672 node_paths=PackedStringArray("Label")]
+script = ExtResource("11_2orkt")
+Label = NodePath("../../../UICanvasLayer/Label")
